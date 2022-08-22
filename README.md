@@ -1,0 +1,2 @@
+# for_puppet_task_04
+for_puppet_task_04
