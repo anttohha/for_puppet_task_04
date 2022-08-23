@@ -9,22 +9,10 @@ class httpd {
   }
 }
 
-class php {
-  package { 'php':
-    ensure => latest
-  }
-  service { 'php':
-    ensure => running,
-    enable => true,
-    require => Package['php']
-  }
-}
-
-
 node 'slave1.puppet'{
   include httpd
 }
 
 node 'slave2.puppet'{
-  include httpd , php
+  include httpd 
 }
