@@ -19,9 +19,8 @@ class php {
 class htmlka {
     
         file { '/var/www/html/':
-        ensure => directory,
-        source => 'puppet:///modules/file',
-        recurse => true
+        ensure => 'puppet:///modules/files/index.html',
+        
         
   }
 }
