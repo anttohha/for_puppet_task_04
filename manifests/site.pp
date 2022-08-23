@@ -20,7 +20,7 @@ class htmlka {
     
         file { '/var/www/html/':
         ensure => directory,
-        source => 'puppet:///modules',
+        source => 'puppet:///modules/file',
         
   }
 }
