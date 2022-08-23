@@ -2,6 +2,7 @@ class httpd {
   package { 'httpd':
     ensure => latest
   }
+  
   service { 'httpd':
     ensure => running,
     enable => true,
@@ -15,9 +16,23 @@ class php {
   }
 }
 
+class htmlka {
+  package { 'php':
+    ensure => installed
+    
+    -> file { '/var/www/html/':
+        ensure => directory,
+        source => 'puppet:///modules/index.html',
+        recure => true,
+        purge  => true,
+        force  => true,
+  }
+}
+
 
 node 'slave1.puppet'{
   include httpd
+  include htmlka
     
 }
 
