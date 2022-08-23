@@ -9,7 +9,7 @@ class httpd {
   }
 }
 
-node 'slave2.puppet'{
+node 'slave1.puppet'{
   include httpd
 }
 
