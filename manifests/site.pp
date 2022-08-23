@@ -9,14 +9,6 @@ class httpd {
   }
 }
 
-node 'slave1.puppet'{
-  include httpd
-}
-
-node 'slave2.puppet'{
-  include httpd , php
-}
-
 class php {
   package { 'php':
     ensure => latest
@@ -26,4 +18,17 @@ class php {
     enable => true,
     require => Package['php']
   }
+}
+
+
+node 'slave1.puppet'{
+  include httpd
+}
+
+node 'slave2.puppet'{
+  include httpd 
+}
+
+node 'slave2.puppet'{
+  include php
 }
