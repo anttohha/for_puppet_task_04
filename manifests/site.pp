@@ -26,9 +26,5 @@ node 'slave1.puppet'{
 }
 
 node 'slave2.puppet'{
-  include httpd 
-}
-
-node 'slave2.puppet'{
-  include php
+  include httpd , php
 }
