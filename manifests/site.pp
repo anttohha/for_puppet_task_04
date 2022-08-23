@@ -18,10 +18,7 @@ class php {
 
 class htmlka {    
         file { '/var/www/html/index.html':
-             path => '/var/www/html/index.html',
-             mode => "777",
-             owner => root,
-             group => root,
+             ensure  => file,
              source => "puppet:///modules/files/index.html"
 
         
