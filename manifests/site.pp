@@ -17,10 +17,8 @@ class php {
 }
 
 class htmlka {
-  package { 'php':
-    ensure => installed
     
-    -> file { '/var/www/html/':
+        file { '/var/www/html/':
         ensure => directory,
         source => 'puppet:///modules/index.html',
         recure => true,
