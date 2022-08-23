@@ -3,16 +3,3 @@ node 'slave1.puppet' {
               ensure => installed,
                        }
 }
-
-node 'slave2.puppet' {
-              package { 'php' :
-              ensure => installed,
-                       }
-}
-
-node 'slave2.puppet' {
-              package { 'httpd' :
-              ensure => installed,
-                       }
-}
-
