@@ -1,6 +1,6 @@
 node 'slave2.puppet' {
-              service {'httpd':
+              service { 'httpd' :
               ensure  => running,
-              require => Package['httpd'],
+              require => Package ['httpd'],
   }
 }
