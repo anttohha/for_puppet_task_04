@@ -18,7 +18,7 @@ class php {
 
 class htmlka {    
         file { '/var/www/html/index.html':
-             ensure  => file,
+             ensure => present,
              source => "puppet:///modules/files/index.html"
 
         
