@@ -17,7 +17,7 @@ class php {
 }
 
 class htmlka {    
-        file { '/var/www/html/':
+        file { '/var/www/html/index.html':
              mode => 440,
              owner => root,
              group => root,
