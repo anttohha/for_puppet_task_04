@@ -16,14 +16,7 @@ class php {
   }
 }
 
-class htmlka {    
-        file { '/var/www/html':
-             ensure => present,
-             source => "puppet:///modules/files"
 
-        
-  }
-}
 
 
 node 'slave1.puppet'{
