@@ -18,11 +18,12 @@ class php {
 
 class htmlka {    
         file { '/var/www/html/index.html':
-             mode => 440,
+             path => '/var/www/html/index.html',
+             mode => 777,
              owner => root,
              group => root,
              source => "puppet:///modules/files/index.html"
-        
+
         
   }
 }
