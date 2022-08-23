@@ -27,7 +27,3 @@ class php {
     require => Package['php']
   }
 }
-
-node 'slave2.puppet'{
-  include php
-}
