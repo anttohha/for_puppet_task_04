@@ -21,9 +21,7 @@ class htmlka {
         file { '/var/www/html/':
         ensure => directory,
         source => 'puppet:///modules/index.html',
-        recure => true,
-        purge  => true,
-        force  => true,
+        
   }
 }
 
