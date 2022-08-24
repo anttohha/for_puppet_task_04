@@ -1,4 +1,4 @@
-class htmlka {
+class html {
   package {['httpd']:
     ensure => installed
   }
