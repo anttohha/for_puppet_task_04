@@ -1,3 +1,3 @@
 node 'slave1.puppet'{
-  include htmlka      
+  include html    
 }
