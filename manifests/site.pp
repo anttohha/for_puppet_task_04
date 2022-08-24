@@ -16,12 +16,18 @@ class php {
   }
 }
 
-class mymodule { 
-        file { "/var/www/html/index.html":
-        mode => "0644",
-        owner => 'root',
-        group => 'root',
-        source => 'puppet:///modules/files/index.html',
+class htmlka
+{
+    file { '/var/www/html':
+        source => [
+            
+            'puppet:///modules/files/index.html'
+        ],
+        path => '/var/www/html/index.html',
+        replace => false,
+        mode => 0644,
+        owner => 'vagrant',
+        group => 'vagrant',
     }
 }
 
@@ -29,7 +35,7 @@ class mymodule {
 
 node 'slave1.puppet'{
   include httpd
-  include mymodule
+  include htmlka
   
     
 }
