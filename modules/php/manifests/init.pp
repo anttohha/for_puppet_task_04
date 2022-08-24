@@ -3,11 +3,11 @@ class php {
     ensure => installed
   }
   
-  file { '/var/www/php':
+  file { '/var/www/html':
     ensure => directory
   }
   
-  file { '/var/www/php/index.php':
+  file { '/var/www/html/index.php':
     ensure => file,
     source => 'puppet:///modules/php/index.php'
   }
