@@ -1,47 +1,25 @@
-class httpd {
-  package { 'httpd':
-    ensure => latest
+class htmlka {
+  package {['httpd']:
+    ensure => installed
   }
   
-  service { 'httpd':
-    ensure => running,
-    enable => true,
-    require => Package['httpd']
+  file { '/var/www/html':
+    ensure => directory
   }
-}
-
-class php {
-  package { 'php':
-    ensure => latest
+  
+  file { '/var/www/html/index.html':
+    ensure => file,
+    source => 'puppet:///modules/files/index.html'
   }
+  
+ service {'httpd':
+    ensure => running
+ }
 }
-
-class htmlka
-{
-    file { '/var/www/html':
-        source => [
-            
-            'puppet:///modules/files/index.html'
-        ],
-        path => '/var/www/html/index.html',
-        replace => false,
-        mode => 0644,
-        owner => 'vagrant',
-        group => 'vagrant',
-    }
-}
-
-
 
 node 'slave1.puppet'{
-  include httpd
   include htmlka
   
-    
-}
-
-node 'slave2.puppet'{
-  include httpd
-  include php
   
+    
 }
