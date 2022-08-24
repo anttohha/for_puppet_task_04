@@ -3,7 +3,7 @@
         owner => 'root',
         group => 'root',
         
-    }file { "/var/www/html/test.txt":
+    }file { "/var/www/html/index.html":
         mode => "0644",
         owner => 'root',
         group => 'root',
