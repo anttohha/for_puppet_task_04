@@ -16,11 +16,20 @@ class php {
   }
 }
 
+class mymodule { 
+        file { "/var/www/html/index.html":
+        mode => "0644",
+        owner => 'root',
+        group => 'root',
+        source => 'puppet:///modules/index.html',
+    }
+}
 
 
 
 node 'slave1.puppet'{
   include httpd
+  include mymodule
   
     
 }
