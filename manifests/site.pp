@@ -21,7 +21,7 @@ class php {
 
 node 'slave1.puppet'{
   include httpd
-  include mymodule
+  include ::mymodule
     
 }
 
