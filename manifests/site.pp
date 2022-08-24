@@ -21,7 +21,7 @@ class mymodule {
         mode => "0644",
         owner => 'root',
         group => 'root',
-        source => 'puppet:///modules/index.html',
+        source => 'puppet:///modules/files/index.html',
     }
 }
 
