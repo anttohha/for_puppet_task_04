@@ -1,11 +1,8 @@
-class maincraft {
-   
+class maincraft {   
  
  file { '/opt/minecraft/':
-    ensure => directory 
- 
-  }
-  
+    ensure => directory  
+  }  
  
   file { "/opt/minecraft/newjava.rpm":
   source => [
@@ -15,21 +12,20 @@ class maincraft {
 
 exec {'install_java_rpm' :
     path    => ['/usr/bin', '/usr/sbin', '/bin'],
-    command   => "/usr/bin/rpm -ivh /opt/minecraft/newjava.rpm",
-    
+    command   => "/usr/bin/rpm -ivh /opt/minecraft/newjava.rpm",    
   }
-
-  
-  
-  
+    
   file { "/opt/minecraft/server.jar":
   source => [
     "https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar",
   ]
 }
 
-
-
+exec {'install_server_jar' :
+    path    => ['/usr/bin', '/usr/sbin', '/bin'],
+    command   => "java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui",
+    
+  }
  
  }
 
