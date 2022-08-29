@@ -14,11 +14,7 @@ class maincraft {
   ]
 }
 
-  package{'java new':
-            provider => 'rpm',
-            ensure => 'present',
-            source => '/opt/minecraft/newjava.rpm',
-        }
+  
   
   
   file { "/opt/minecraft/server.jar":
