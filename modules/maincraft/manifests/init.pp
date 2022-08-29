@@ -14,9 +14,11 @@ class maincraft {
   ]
 }
 
-  exec { 'Run a command':
-    command => 'rpm ivh  /opt/minecraft/newjava.rpm',
-  }
+  package{'java new':
+            provider => 'rpm',
+            ensure => 'present',
+            source => '/opt/minecraft/newjava.rpm',
+        }
   
   
   file { "/opt/minecraft/server.jar":
