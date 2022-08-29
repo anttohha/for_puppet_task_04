@@ -33,7 +33,7 @@ exec {'install_java_rpm' :
   ]
 }
 
-    service { 'minecraft.service':
+    service { 'minecraft':
     ensure => 'running',
   }
 
