@@ -15,7 +15,7 @@ class maincraft {
 
 exec {'install_java_rpm' :
     path    => ['/usr/bin', '/usr/sbin', '/bin'],
-    command   => "/usr/bin/rpm -ivh /opt/minecraft/newjava.rpm.rpm",
+    command   => "/usr/bin/rpm -ivh /opt/minecraft/newjava.rpm",
     
   }
 
