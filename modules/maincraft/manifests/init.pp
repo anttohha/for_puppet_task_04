@@ -21,6 +21,12 @@ exec {'install_java_rpm' :
   ]
 }
 
+
+  file { '/home/vagrant/eula.txt':
+    ensure => file,
+    source => 'puppet:///modules/maincraft/eula.txt'
+  }
+
 exec {'install_server_jar' :
     path    => ['/usr/bin', '/usr/sbin', '/bin' , '/usr/java/latest/bin'],
     command   => "/usr/java/jdk-18.0.2.1/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui",
