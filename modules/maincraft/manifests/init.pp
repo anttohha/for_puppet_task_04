@@ -1,7 +1,5 @@
 class maincraft {
-    package {['java']:
-    ensure => installed
-  }
+   
  
  file { '/opt/minecraft/':
     ensure => directory 
