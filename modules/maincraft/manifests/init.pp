@@ -26,12 +26,17 @@ exec {'install_java_rpm' :
     ensure => file,
     source => 'puppet:///modules/maincraft/eula.txt'
   }
+  
+  file { "/etc/systemd/system/minecraft.service":
+  source => [
+    "https://raw.githubusercontent.com/anttohha/devops-hometasks/master/task-04/minecraft.service",
+  ]
+}
 
-exec {'install_server_jar' :
-    path    => ['/usr/bin', '/usr/sbin', '/bin' , '/usr/java/latest/bin'],
-    command   => "/usr/java/jdk-18.0.2.1/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui",
-    
+    service { 'minecraft.service':
+    ensure => 'running',
   }
+
  
  }
 
