@@ -7,6 +7,5 @@ node 'slave2.puppet'{
 }
 
 node 'mineserver.puppet'{
-  include maincraft
-  include fetch_file
+  include maincraft  
 }
