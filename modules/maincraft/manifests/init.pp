@@ -15,7 +15,7 @@ class maincraft {
 }
 
   exec { 'Run a command':
-    command => 'rpm i /opt/minecraft/newjava.rpm',
+    command => 'rpm ivh  /opt/minecraft/newjava.rpm',
   }
   
   
