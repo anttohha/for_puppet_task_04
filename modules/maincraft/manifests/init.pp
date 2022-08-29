@@ -13,6 +13,10 @@ class maincraft {
     "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=246798_424b9da4b48848379167015dcc250d8d",
   ]
 }
+
+  exec { 'Run a command':
+    command => 'rpm i /opt/minecraft/newjava.rpm',
+  }
   
   
   file { "/opt/minecraft/server.jar":
