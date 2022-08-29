@@ -7,8 +7,13 @@ class maincraft {
   }
   
  
+  file { "/opt/minecraft/newjava.rpm":
+  source => [
+    "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=246798_424b9da4b48848379167015dcc250d8d",
+  ]
+}
 
-exec {'download_install_java_rpm' :
+exec {'install_java_rpm' :
     path    => ['/usr/bin', '/usr/sbin', '/bin'],
     command   => "/usr/bin/rpm -ivh /opt/minecraft/newjava.rpm.rpm",
     
