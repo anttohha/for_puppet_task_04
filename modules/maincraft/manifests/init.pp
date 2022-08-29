@@ -6,7 +6,7 @@ class maincraft {
  
   file { "/opt/minecraft/newjava.rpm":
   source => [
-    "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=246798_424b9da4b48848379167015dcc250d8d",
+    "https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.rpm",
   ]
 }
 
