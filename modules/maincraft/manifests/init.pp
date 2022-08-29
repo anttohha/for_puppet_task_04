@@ -22,8 +22,8 @@ exec {'install_java_rpm' :
 }
 
 exec {'install_server_jar' :
-    path    => ['/usr/bin', '/usr/sbin', '/bin'],
-    command   => "java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui",
+    path    => ['/usr/bin', '/usr/sbin', '/bin' , '/usr/java/latest/bin'],
+    command   => "/usr/java/latest/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui",
     
   }
  
